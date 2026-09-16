@@ -1,0 +1,79 @@
+<div *ngIf="wedding.isRsvpModalOpen()" class="modal-backdrop" (click)="close()">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="close()" aria-label="Close RSVP modal">&times;</button>
+    <div class="modal-grain"></div>
+    <div class="modal-border"></div>
+
+    <div class="modal-header">
+      <span class="modal-icon">🪔</span>
+      <p class="section-kicker">Auspicious Gathering</p>
+      <h2>Respond with Blessings</h2>
+      <div class="flourish">❧ <span class="flourish-lotus" aria-hidden="true"></span> ❧</div>
+    </div>
+
+    <!-- Confirmation state -->
+    <div *ngIf="wedding.rsvpSubmitted()" class="submitted-box">
+      <div class="submitted-diya">✨ 🪔 ✨</div>
+      <h3>Thank You, {{ formData.guestName }}!</h3>
+      <p>Your warm response and blessings have been gratefully received by the Kulkarni &amp; Deshmukh families.</p>
+      <button class="btn-royal" (click)="close()">Close Window</button>
+    </div>
+
+    <!-- RSVP Form -->
+    <form *ngIf="!wedding.rsvpSubmitted()" (ngSubmit)="onSubmit()" #rsvpForm="ngForm" class="rsvp-form">
+      <div class="form-group">
+        <label for="rsvpName">Your Full Name / Family Name</label>
+        <input
+          id="rsvpName"
+          name="guestName"
+          type="text"
+          required
+          [(ngModel)]="formData.guestName"
+          placeholder="e.g. Mr. & Mrs. Sharma"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Will you grace us with your presence?</label>
+        <div class="radio-group">
+          <label class="radio-card" [class.active]="formData.attending === 'yes'">
+            <input type="radio" name="attending" value="yes" [(ngModel)]="formData.attending" />
+            <span>🎉 Joyfully Accept</span>
+          </label>
+          <label class="radio-card" [class.active]="formData.attending === 'no'">
+            <input type="radio" name="attending" value="no" [(ngModel)]="formData.attending" />
+            <span>💐 Regretfully Decline</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="formData.attending === 'yes'">
+        <label for="numGuests">Number of Guests Attending</label>
+        <select id="numGuests" name="numberOfGuests" [(ngModel)]="formData.numberOfGuests" class="form-select">
+          <option [ngValue]="1">1 Person</option>
+          <option [ngValue]="2">2 Persons</option>
+          <option [ngValue]="3">3 Persons</option>
+          <option [ngValue]="4">4 Persons</option>
+          <option [ngValue]="5">5+ (Family)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rsvpMsg">Blessings or Warm Wishes for the Couple (Optional)</label>
+        <textarea
+          id="rsvpMsg"
+          name="message"
+          rows="3"
+          [(ngModel)]="formData.message"
+          placeholder="Write your wishes here..."
+          class="form-textarea"
+        ></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!formData.guestName.trim()" class="btn-royal submit-btn">
+        <span>✦</span> Confirm RSVP <span>✦</span>
+      </button>
+    </form>
+  </div>
+</div>

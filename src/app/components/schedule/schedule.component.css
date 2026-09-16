@@ -1,0 +1,40 @@
+.details { padding-bottom: 64px; background: rgba(227, 208, 158, .16); }
+.schedule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 730px; margin: 32px auto 0; }
+.schedule article { padding: 4px 16px; }
+.detail-icon { color: var(--gold); font: 31px/1 "Marcellus", serif; }
+h3 { margin: 12px 0 8px; color: var(--wine); font-size: 18px; }
+.schedule p { margin: 0 0 7px; font-size: 13px; line-height: 1.65; }
+.schedule strong, .schedule a { color: #8d6827; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+.schedule a { text-decoration: none; border-bottom: 1px solid currentColor; }
+
+.calendar-action {
+  margin-top: 36px;
+}
+.btn-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--wine);
+  background: rgba(251, 245, 231, .8);
+  font-family: "Marcellus", serif;
+  font-size: 12px;
+  letter-spacing: .05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .25s ease;
+  box-shadow: 0 2px 8px rgba(182, 138, 53, .15);
+}
+.btn-calendar:hover {
+  background: var(--wine);
+  color: #fff6dc;
+  border-color: var(--wine);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(88, 30, 29, .25);
+}
+
+@media (max-width: 620px) {
+  .schedule { grid-template-columns: 1fr; gap: 28px; }
+}

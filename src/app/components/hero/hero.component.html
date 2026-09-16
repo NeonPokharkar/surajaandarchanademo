@@ -1,0 +1,56 @@
+<section class="hero section">
+  <div class="corner corner-top-left"></div>
+  <div class="corner corner-top-right"></div>
+  <div class="kalash" aria-hidden="true">🪔</div>
+  <p class="sanskrit">॥ श्री गणेशाय नमः ॥</p>
+  <div class="paisley-row" aria-hidden="true">
+    <img class="peacock peacock-left" src="peacock.svg" alt="" />
+    <div class="ganesha-medallion" aria-label="Lord Ganesha illustration">
+      <div class="sun-rays"></div>
+      <div class="sun-rays sun-rays--outer"></div>
+      <div class="petal-ring" aria-hidden="true"></div>
+      <div class="ganesha-image" role="img" aria-label="Shree Ganesha"></div>
+    </div>
+    <img class="peacock peacock-right" src="peacock.svg" alt="" />
+  </div>
+  <p class="blessing">With the divine blessings of Lord Ganesha</p>
+  <div class="ornament"><span></span><i>✦</i><span></span></div>
+  <p class="host-line">Together with their families</p>
+  <h1>Suraj <em>&amp;</em> Archana</h1>
+  <div class="ornament ornament-small"><span></span><i>❁</i><span></span></div>
+  <p class="celebrate">request the honour of your presence<br />as they begin their forever.</p>
+  
+  <div class="hero-bottom-grid">
+    <div class="date-seal">
+      <span>Sunday</span>
+      <strong>15</strong>
+      <span>February 2027</span>
+    </div>
+
+    <!-- Live Countdown Timer -->
+    <div class="countdown-badge" aria-label="Countdown to wedding muhurat">
+      <div class="countdown-label">Auspicious Muhurat In</div>
+      <div class="countdown-grid">
+        <div class="countdown-unit">
+          <span class="unit-val">{{ wedding.days() }}</span>
+          <span class="unit-lbl">Days</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="unit-val">{{ wedding.hours() < 10 ? '0' + wedding.hours() : wedding.hours() }}</span>
+          <span class="unit-lbl">Hours</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="unit-val">{{ wedding.minutes() < 10 ? '0' + wedding.minutes() : wedding.minutes() }}</span>
+          <span class="unit-lbl">Mins</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="unit-val">{{ wedding.seconds() < 10 ? '0' + wedding.seconds() : wedding.seconds() }}</span>
+          <span class="unit-lbl">Secs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

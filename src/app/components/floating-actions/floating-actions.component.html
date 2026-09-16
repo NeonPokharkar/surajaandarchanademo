@@ -1,0 +1,43 @@
+<div class="fab-container">
+  <!-- Music Player Toggle Button -->
+  <button
+    class="map-fab fab-secondary"
+    (click)="wedding.toggleMusic()"
+    [attr.aria-label]="wedding.isPlayingMusic() ? 'Pause background music' : 'Play background music'"
+  >
+    <span class="map-fab-icon" aria-hidden="true">
+      <span *ngIf="!wedding.isPlayingMusic()">🎵</span>
+      <span *ngIf="wedding.isPlayingMusic()" class="music-bars">
+        <i></i><i></i><i></i>
+      </span>
+    </span>
+    <span class="map-fab-label">{{ wedding.isPlayingMusic() ? 'Music On' : 'Music' }}</span>
+  </button>
+
+  <!-- Quick RSVP Button -->
+  <button
+    class="map-fab fab-secondary"
+    (click)="wedding.openRsvpModal()"
+    aria-label="Open RSVP form"
+  >
+    <span class="map-fab-icon" aria-hidden="true">💌</span>
+    <span class="map-fab-label">RSVP</span>
+  </button>
+
+  <!-- Google Maps Venue Button -->
+  <a
+    class="map-fab"
+    [href]="wedding.venueMapUrl"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Open venue location in Google Maps"
+  >
+    <span class="map-fab-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" />
+        <circle cx="12" cy="9.5" r="2.5" />
+      </svg>
+    </span>
+    <span class="map-fab-label">Venue</span>
+  </a>
+</div>

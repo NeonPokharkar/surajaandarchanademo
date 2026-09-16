@@ -1,0 +1,17 @@
+.footer { position: relative; padding-top: 53px; padding-bottom: 72px; background: var(--deep-wine); color: #f7e9c7; overflow: hidden; }
+.footer-peacock { position: absolute; bottom: -8px; width: 96px; height: auto; opacity: .16; pointer-events: none; }
+.footer-peacock-left { left: 12px; }
+.footer-peacock-right { right: 12px; transform: scaleX(-1); }
+.footer h2 { background: linear-gradient(180deg, #fff7de, #d4b363 70%); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: clamp(24px, 3vw, 34px); }
+.footer .section-kicker { color: #d4b363; margin-top: 24px; }
+.rsvp { margin: 15px 0 0; font-size: 11px; letter-spacing: .05em; }
+.diya-row { margin-top: 26px; font-size: 18px; letter-spacing: 10px; opacity: .9; }
+
+.ornament { display: flex; align-items: center; justify-content: center; gap: 10px; color: #d4b363; }
+.ornament span { width: 62px; height: 1px; background: linear-gradient(90deg, transparent, currentColor); }
+.ornament span:last-child { background: linear-gradient(270deg, transparent, currentColor); }
+.ornament i { font-style: normal; font-size: 15px; }
+
+@media (max-width: 620px) {
+  .footer-peacock { width: 60px; opacity: .12; }
+}

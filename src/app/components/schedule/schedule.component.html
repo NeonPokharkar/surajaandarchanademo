@@ -1,0 +1,33 @@
+<section class="details section content-section">
+  <div class="corner-motif corner-motif-left" aria-hidden="true">❦</div>
+  <div class="corner-motif corner-motif-right" aria-hidden="true">❦</div>
+  <p class="section-kicker">Save the date</p>
+  <h2>Wedding celebrations</h2>
+  <div class="flourish">❧ <span class="flourish-lotus" aria-hidden="true"></span> ❧</div>
+  <div class="schedule">
+    <article>
+      <div class="detail-icon">☼</div>
+      <h3>Wedding Ceremony</h3>
+      <p>Sunday, 15 February 2027</p>
+      <strong>10:42 AM onwards</strong>
+    </article>
+    <article>
+      <div class="detail-icon">⌂</div>
+      <h3>Venue</h3>
+      <p>Shree Ganesh Lawns<br />Baner Road, Pune</p>
+      <a [href]="wedding.venueMapUrl" target="_blank" rel="noreferrer">View location ↗</a>
+    </article>
+    <article>
+      <div class="detail-icon">✦</div>
+      <h3>Reception</h3>
+      <p>Sunday, 15 February 2027</p>
+      <strong>7:00 PM onwards</strong>
+    </article>
+  </div>
+
+  <div class="calendar-action">
+    <a [href]="wedding.getGoogleCalendarUrl()" target="_blank" rel="noreferrer" class="btn-calendar">
+      <span>📅</span> Add to Google Calendar
+    </a>
+  </div>
+</section>

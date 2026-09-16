@@ -1,0 +1,95 @@
+.fab-container {
+  position: fixed;
+  z-index: 50;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.map-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px 12px 14px;
+  border: 1px solid var(--light-gold);
+  border-radius: 999px;
+  color: #fff6dc;
+  text-decoration: none;
+  background: linear-gradient(155deg, #7a2c25, var(--wine) 55%, var(--deep-wine));
+  box-shadow: 0 10px 26px rgba(24, 4, 4, .45), 0 0 0 1px rgba(182, 138, 53, .3), inset 0 0 0 1px rgba(217, 189, 117, .18);
+  font-family: "Marcellus", serif;
+  font-size: 13px;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.map-fab:hover, .map-fab:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(24, 4, 4, .5), 0 0 0 1px var(--light-gold), inset 0 0 0 1px rgba(217, 189, 117, .28);
+}
+
+.fab-secondary {
+  padding: 10px 16px 10px 12px;
+  font-size: 12px;
+  background: linear-gradient(155deg, #441716, #2d0c0b);
+  opacity: .95;
+}
+
+.map-fab-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--light-gold);
+  background: rgba(217, 189, 117, .12);
+  font-size: 14px;
+}
+
+.map-fab:not(.fab-secondary) .map-fab-icon::before {
+  position: absolute;
+  inset: -5px;
+  border: 1px dashed rgba(217, 189, 117, .55);
+  border-radius: 50%;
+  content: "";
+  animation: pulse-ring 2.6s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: .75; }
+  50% { transform: scale(1.14); opacity: .25; }
+}
+
+.music-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+.music-bars i {
+  display: block;
+  width: 3px;
+  background: var(--light-gold);
+  border-radius: 1px;
+  animation: barBounce 1s ease-in-out infinite alternate;
+}
+.music-bars i:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+.music-bars i:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+.music-bars i:nth-child(3) { height: 40%; animation-delay: 0.2s; }
+
+@keyframes barBounce {
+  from { height: 20%; }
+  to { height: 100%; }
+}
+
+.map-fab-label { text-transform: uppercase; }
+
+@media (max-width: 620px) {
+  .fab-container { right: 14px; bottom: 14px; gap: 8px; }
+  .map-fab { padding: 10px 14px 10px 10px; font-size: 11px; }
+  .map-fab-icon { width: 26px; height: 26px; font-size: 12px; }
+}
