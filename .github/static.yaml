@@ -1,4 +1,4 @@
-name: Deploy Wedding App to GitHub Pages
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
@@ -33,11 +33,12 @@ jobs:
         run: npm ci
 
       - name: Build Angular Application
-        run: npm run build -- --configuration=production --base-href="/${{ github.event.repository.name }}/"
+        run: npm run build -- --configuration=production --base-href=/
 
       - name: Prepare SPA fallback
         run: |
-          cp ./dist/wedding-app/browser/index.html ./dist/wedding-app/browser/404.html
+          cp ./dist/surajandarchanademo/browser/index.html ./dist/surajandarchanademo/browser/404.html
+          cp ./CNAME ./dist/surajandarchanademo/browser/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -45,7 +46,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/wedding-app/browser
+          path: ./dist/surajandarchanademo/browser
 
       - name: Deploy to GitHub Pages
         id: deployment
