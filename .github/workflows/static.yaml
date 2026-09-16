@@ -27,15 +27,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular Application
+      - name: Build Angular application
         run: npm run build -- --configuration=production --base-href=/
 
-      - name: Prepare SPA fallback
+      - name: Prepare Pages artifact
         run: |
           cp ./dist/surajandarchanademo/browser/index.html ./dist/surajandarchanademo/browser/404.html
           cp ./CNAME ./dist/surajandarchanademo/browser/CNAME
